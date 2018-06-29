@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<AnchorPane prefHeight="600" prefWidth="800" xmlns="http://javafx.com/javafx/8.0.131" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mvc.employee.model.view.EmployeeController">
+   <children>
+      <SplitPane dividerPositions="0.29797979797979796" layoutX="14.0" layoutY="21.0" prefHeight="600.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <TableView id="employeeTable" fx:id="employeeTable" layoutY="130.0" prefHeight="598.0" prefWidth="234.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <columns>
+                      <TableColumn fx:id="firstNameColumn" prefWidth="75.0" text="Imię" />
+                      <TableColumn fx:id="lastNameColumn" prefWidth="75.0" text="Nazwisko" />
+                      <TableColumn fx:id="emailColumn" prefWidth="75.0" text="Email" />
+                      <TableColumn fx:id="phoneColumn" prefWidth="75.0" text="Telefon" />
+                      <TableColumn fx:id="hireDateColumn" prefWidth="75.0" text="Data zatrudnienia" />
+                      <TableColumn fx:id="jobTitleColumn" prefWidth="75.0" text="Stanowisko" />
+                      <TableColumn fx:id="salaryColumn" prefWidth="75.0" text="Wynagrodzenie" />
+                      <TableColumn fx:id="managerNameColumn" prefWidth="75.0" text="Kierownik" />
+                      <TableColumn fx:id="departmentNameColumn" prefWidth="75.0" text="Dział" />
+                        <TableColumn fx:id="employeeIdColumn" prefWidth="75.0" text="ID" />                                            
+                    </columns>
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                  </TableView>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <ToolBar layoutX="330.0" layoutY="544.0" prefHeight="40.0" prefWidth="201.0" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="25.0">
+                    <items>
+                        <Button mnemonicParsing="false" onMouseClicked="#addEmployee" text="Wstaw" />
+                        <Button mnemonicParsing="false" onMouseClicked="#editEmployee" text="Edytuj" />
+                      <Button mnemonicParsing="false" onMouseClicked="#deleteEmployee" text="Usuń" />
+                    </items>
+                  </ToolBar>
+                  
+                  <GridPane layoutX="14.0" layoutY="16.0" prefHeight="483.0" prefWidth="522.0" AnchorPane.bottomAnchor="75.0" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="18.0" AnchorPane.topAnchor="40.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="255.0" minWidth="10.0" prefWidth="139.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="383.0" minWidth="10.0" prefWidth="383.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label text="Id pracownik" GridPane.halignment="RIGHT" />
+                        <Label id="empId" fx:id="employeeIdLabel" prefWidth="79.0" text="Label" GridPane.columnIndex="1">
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding></Label>
+                        <Label text="Imię" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+                        <Label id="empFirstName" fx:id="firstNameLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding></Label>
+                        <Label text="Nazwisko" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
+                        <Label id="empLastName" fx:id="lastNameLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding></Label>
+                        <Label text="email" GridPane.halignment="RIGHT" GridPane.rowIndex="3" />
+                        <Label id="empEmail" fx:id="emailLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding></Label>
+                        <Label text="Telefon" GridPane.halignment="RIGHT" GridPane.rowIndex="4" />
+                        <Label id="empPhone" fx:id="phoneLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding></Label>
+                        <Label text="Data zatrudnienia" GridPane.halignment="RIGHT" GridPane.rowIndex="5" />
+                        <Label id="empHireDate" fx:id="hireDateLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding></Label>
+                        <Label text="Stanowisko" GridPane.halignment="RIGHT" GridPane.rowIndex="6" />
+                        <Label id="empJobId" fx:id="jobIdLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding></Label>
+                        <Label text="Zarobki" GridPane.halignment="RIGHT" GridPane.rowIndex="7" />
+                        <Label id="empSalary" fx:id="salaryLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding></Label>
+                        <Label text="Kierownik" GridPane.halignment="RIGHT" GridPane.rowIndex="8" />
+                        <Label id="empManagerId" fx:id="managerIdLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="8">
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding></Label>
+                        <Label text="Dział " GridPane.halignment="RIGHT" GridPane.rowIndex="9" />
+                        <Label id="empDepartmentId" fx:id="departmentIdLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="9">
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding></Label>
+                     </children>
+                    
+                  </GridPane>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
